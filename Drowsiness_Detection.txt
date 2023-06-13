@@ -1,0 +1,13 @@
+in this script, we first load the VGGFace model without the top (output) layer.
+Then, we freeze the layers of the base model to prevent them from being updated during training.
+After that, we add a Flatten layer to transform the output of the base model into a 1D array,
+and then we add a Dense layer with 1024 units. The output layer is a Dense layer with a single unit
+and a sigmoid activation function, which will output the probability that the person is drowsy.
+Finally, we compile the model with the Adam optimizer and binary cross entropy loss, as this is a binary 
+classification task.
+
+After that, we would need to load a drowsiness detection dataset and train the model on it.
+Note that the images would need to be preprocessed to match the input shape of the model (224x224 pixels) and 
+the pixel values would need to be normalized to the range [0, 1]. The labels would need to be 0 for not drowsy
+and 1 for drowsy.
+
